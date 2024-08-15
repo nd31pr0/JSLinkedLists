@@ -37,5 +37,12 @@ class LinkedList {
     head() {
         return this.head
     }
-    
+    tail(){
+        if(!this.head) return null// if list is empty
+        let currentNode = this.head
+        while(currentNode.next){
+            currentNode = currentNode.next
+        }
+        return currentNode;
+    }
 }
