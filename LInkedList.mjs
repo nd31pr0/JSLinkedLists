@@ -34,4 +34,8 @@ class LinkedList {
         return this.count;
     }
 
+    head() {
+        return this.head
+    }
+    
 }
