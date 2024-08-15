@@ -45,4 +45,17 @@ class LinkedList {
         }
         return currentNode;
     }
+    // return element at indicated index
+    at(index){
+        let currentNode = this.head
+        let count = 0
+        while(currentNode){
+            if(count === index){
+                return currentNode
+            }
+            count++
+            currentNode = currentNode.next
+        }
+        return null// if list is empty
+    }
 }
