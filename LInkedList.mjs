@@ -10,8 +10,8 @@ class LinkedList {
         this.head = null;
     }
 
+    // Add a new node at the end of the list
     append(value) {
-        // Add a new node at the end of the list
         const newNode = new Node(value);
         if (!this.head) {
             this.head = newNode;
@@ -24,19 +24,24 @@ class LinkedList {
         lastNode.next = newNode;
     }
 
-
+    // function to add element at the start of the list
     prepend(value){
         const newNode = new Node(value);
         newNode.next = this.head;
         this.head = newNode;
     }
+
+    // function to return size of the list
     size() {
         return this.count;
     }
 
+    // function to return first element of list
     head() {
         return this.head
     }
+
+    // function to return last node of list
     tail(){
         if(!this.head) return null// if list is empty
         let currentNode = this.head
