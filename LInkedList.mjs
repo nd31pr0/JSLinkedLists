@@ -63,4 +63,26 @@ class LinkedList {
         }
         return null// if list is empty
     }
+
+    // Remove last element from list
+    pop() {
+        if (!this.head) return null; // Return null if the list is empty
+
+        if (!this.head.next) { // If there's only one node
+            const removedNode = this.head;
+            this.head = null; // Set head to null
+            this.count--; // Decrement the count
+            return removedNode; // Return the removed node
+        }
+
+        let currentNode = this.head;
+        while (currentNode.next && currentNode.next.next) {
+            currentNode = currentNode.next; // Traverse to the second-to-last node
+        }
+
+        const removedNode = currentNode.next; // The last node to be removed
+        currentNode.next = null; // Remove the last node
+        this.count--; // Decrement the count
+        return removedNode; // Return the removed node
+    }
 }
