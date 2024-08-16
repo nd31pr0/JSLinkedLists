@@ -127,4 +127,34 @@ class LinkedList {
         result += '- > null'
         return result;
     }
+
+    // Insert value into given index
+    insertAt(index, value) {
+        const newNode = { value, next: null }; // Create a new node
+    
+        if (index === 0) {
+            // Insert at the head
+            newNode.next = this.head;
+            this.head = newNode;
+            return;
+        }
+    
+        let currentNode = this.head;
+        let indexTracker = 0;
+    
+        // Traverse to the node just before the desired index
+        while (currentNode && indexTracker < index - 1) {
+            currentNode = currentNode.next;
+            indexTracker++;
+        }
+    
+        // If currentNode is null, the index is out of bounds
+        if (!currentNode) {
+            throw new Error("Index out of bounds");
+        }
+    
+        // Insert the new node
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+    }
 }
