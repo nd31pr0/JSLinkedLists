@@ -111,4 +111,20 @@ class LinkedList {
         }
         return null;
     }
+
+    // Represent the LinkList objects as strings
+    toString(){
+        let currentNode = this.head
+        let result = '';
+
+        while (currentNode) {
+            result += `({currentNode.value})`;
+            currentNode = currentNode.next
+            if (currentNode){
+                result += `->`; // append arrow if the next node exists
+            }
+        }
+        result += '- > null'
+        return result;
+    }
 }
