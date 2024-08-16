@@ -85,6 +85,8 @@ class LinkedList {
         this.count--; // Decrement the count
         return removedNode; // Return the removed node
     }
+
+    // search if node exists in the list
     contains(value){
         let currentNode = this.head
         while (currentNode) {
@@ -94,5 +96,19 @@ class LinkedList {
             currentNode = currentNode.next; // Traverse to the next node
         }
         return false;
+    }
+
+    // Return index of node with 'value' or null if not found
+    find(value){
+        let currentNode = this.head
+        let index = 0;
+        while (currentNode) {
+            if (currentNode.value === value) {
+                return index;
+            }
+            currentNode = currentNode.next; 
+            index++;
+        }
+        return null;
     }
 }
