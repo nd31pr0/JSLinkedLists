@@ -157,4 +157,14 @@ class LinkedList {
         newNode.next = currentNode.next;
         currentNode.next = newNode;
     }
+
+    // Remove node at index
+    removeAt(index){
+        let indexTracker = 0;
+        let currentNode = this.head 
+        if (currentNode && indexTracker < index){
+
+        }
+    }
 }
+module.exports = LinkedList;
