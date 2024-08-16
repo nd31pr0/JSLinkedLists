@@ -85,4 +85,14 @@ class LinkedList {
         this.count--; // Decrement the count
         return removedNode; // Return the removed node
     }
+    contains(value){
+        let currentNode = this.head
+        while (currentNode) {
+            if (currentNode.value === value) {
+                return true;
+            }
+            currentNode = currentNode.next; // Traverse to the next node
+        }
+        return false;
+    }
 }
