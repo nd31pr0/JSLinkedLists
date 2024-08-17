@@ -159,12 +159,32 @@ class LinkedList {
     }
 
     // Remove node at index
-    removeAt(index){
-        let indexTracker = 0;
-        let currentNode = this.head 
-        if (currentNode && indexTracker < index){
-
+    removeAt(index) {
+        if (index < 0 || index >= this.count) {
+            throw new Error("Index out of bounds");
         }
+
+        if (index === 0) {
+            // Remove the head
+            const removedNode = this.head;
+            this.head = this.head.next;
+            this.count--;
+            return removedNode;
+        }
+
+        let currentNode = this.head;
+        let indexTracker = 0;
+
+        // Traverse to the node just before the desired index
+        while (currentNode && indexTracker < index - 1) {
+            currentNode = currentNode.next;
+            indexTracker++;
+        }
+
+        const removedNode = currentNode.next; // The node to remove
+        currentNode.next = currentNode.next.next; // Bypass the removed node
+        this.count--;
+        return removedNode;
     }
 }
 module.exports = LinkedList;
