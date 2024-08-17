@@ -28,6 +28,7 @@ Working with LinkedLists in JS
 
 ## Sample Output of the work
 
+( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null
 
 
 ## The Odin Project (Web development) Completed projects
