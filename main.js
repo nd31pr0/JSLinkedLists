@@ -10,5 +10,6 @@ list.append("snake");
 list.append("turtle");
 
 //console.log(list.toString());
-console.log(list.removeAt(2));
+//console.log(list.removeAt(2));
 console.log(list.toString());
+console.log(list.size());

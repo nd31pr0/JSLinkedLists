@@ -33,7 +33,14 @@ class LinkedList {
 
     // function to return size of the list
     size() {
-        return this.count;
+        let currentNode = this.head;
+        let count = 0
+        while (currentNode){
+            count ++
+            currentNode = currentNode.next;
+        }
+
+        return count;
     }
 
     // function to return first element of list
