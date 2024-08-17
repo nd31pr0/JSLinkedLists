@@ -118,7 +118,7 @@ class LinkedList {
         let result = '';
 
         while (currentNode) {
-            result += `({currentNode.value})`;
+            result += `(${currentNode.value})`;
             currentNode = currentNode.next
             if (currentNode){
                 result += `->`; // append arrow if the next node exists
